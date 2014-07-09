@@ -496,6 +496,15 @@ get_disk_size() {
     echo $(( disk_size ))
 }
 
+get_disk_model() {
+    local disk_name=$1
+
+    [ -r /sys/block/$disk_name/device/model ]
+    BugIfError "Could not determine model of disk $disk_name, please file a bug."
+
+    echo $( < /sys/block/$disk_name/device/model)
+}
+
 # Get the block size of a disk.
 get_block_size() {
     # Only newer kernels have an interface to get the block size
