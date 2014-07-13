@@ -1,3 +1,7 @@
+if [[ $BEXTRACT_DEVICE && $BEXTRACT_BOOTSTRAP ]]; then
+    return
+fi
+
 ### Restore from bacula
 ###
 

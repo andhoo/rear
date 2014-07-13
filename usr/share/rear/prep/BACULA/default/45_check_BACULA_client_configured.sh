@@ -1,7 +1,7 @@
 #
 # Check that bacula is installed and configuration files exist
 
-if [ "$BEXTRACT_DEVICE" -o "$BEXTRACT_VOLUME" ]; then
+if [ "$BEXTRACT_DEVICE" -o "$BEXTRACT_VOLUME" -o "$BEXTRACT_BOOTSTRAP" ]; then
 
    ### Bacula support using bextract
    has_binary bextract
