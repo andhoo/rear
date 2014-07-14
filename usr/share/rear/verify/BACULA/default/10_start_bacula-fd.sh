@@ -7,7 +7,7 @@ if [ "$BEXTRACT_DEVICE" -o "$BEXTRACT_VOLUME" ]; then
    if [ -b "$BEXTRACT_DEVICE" ]; then
       mkdir -p /backup
       mount $BEXTRACT_DEVICE /backup
-      StopIfError "Could not mount Bacula device $BACULA_DEVICE at /backup"
+      StopIfError "Could not mount Bacula device $BEXTRACT_DEVICE at /backup"
    fi
 
 else
