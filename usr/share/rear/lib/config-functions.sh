@@ -18,6 +18,9 @@ SetOSVendorAndVersion () {
         if has_binary lsb_release >&8 2>&1; then
             OS_VENDOR="$(lsb_release -i -s | tr -s " \t" _)"
             OS_VERSION="$(lsb_release -r -s | tr -s " \t" _)"
+        elif [ -r /etc/slackware-version ]; then
+            OS_VENDOR="$(cut -d' ' -f1</etc/slackware-version)"
+            OS_VERSION="$(cut -d' ' -f2</etc/slackware-version)"
         else
             # we have to go the classical way
             Error "The LSB package is not installed.

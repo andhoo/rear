@@ -58,6 +58,10 @@ if [ ! -s "$KERNEL_FILE" ]; then
         else
             Error "Could not find Gentoo kernel"
         fi
+    elif [ -f /etc/slackware-version ]; then
+        if [ -f "/boot/vmlinuz" ]; then
+            KERNEL_FILE="/boot/vmlinuz"
+        fi
     else
         Error "Could not find a matching kernel in /boot !"
     fi
